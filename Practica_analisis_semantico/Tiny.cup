@@ -26,12 +26,12 @@ init with {:
 
 
 terminal IF, ELSE, TIPO_ENT, TRUE, FALSE, TIPO_BOOL, MAS, IGUAL, IGUALIGUAL, MAYOR, PAP, PCIERRE, CAP, CCIERRE, PUNTOCOMA;
-terminal TokenValue IDEN, ENT;
+terminal TokenValue IDEN, ENT, MULTIPLICA;
 
 
 non terminal  LinkedList<Instruccion> P, LInst, ElseCase;
 non terminal Instruccion Inst, Cond, Asig, Decl;
-non terminal E E0, E1, E2, E3;
+non terminal E E0, E1, E2, E3, E4;
 
 
 P       ::= LInst: l
@@ -76,9 +76,9 @@ E1      ::= E1: op1 MAYOR E2: op2
 E1      ::= E2: exp
             {: RESULT = exp; :};
 
-E2      ::= E2: op1 IGUALIGUAL E3: op2
+E2      ::= E2: op1 IGUALIGUAL E4: op2
             {: RESULT = new EBin(BinOps.IGUAL, op1, op2); :};  
-E2      ::= E3: exp
+E2      ::= E4: exp
             {: RESULT = exp; :};
 
 E3      ::= ENT: value
@@ -86,6 +86,11 @@ E3      ::= ENT: value
 E3      ::= TRUE
             {: 
             RESULT = new BoolValue("true"); :};
+E4      ::= E4: op1 MULTIPLICA E3: op2
+            {: RESULT = new EBin(BinOps.MULTIPLICA, op1, op2); :};
+E4      ::= E3: exp
+            {: RESULT = exp; :};
+            
 E3      ::= FALSE 
             {: 
             RESULT = new BoolValue("false"); 

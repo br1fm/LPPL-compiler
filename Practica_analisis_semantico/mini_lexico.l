@@ -51,6 +51,7 @@ else = sino
 int = ent
 bool = bool
 puntocoma = \;
+multiplica = \*
 
 %%
 {separador}               {}
@@ -72,4 +73,5 @@ puntocoma = \;
 {corcheteApertura}        {return ops.unidadCAp();}
 {corcheteCierre}          {return ops.unidadCCierre();} 
 {puntocoma}               {return ops.unidadPuntoComa();}
+{multiplica}              {return ops.unidadMultiplica();}
 [^]                       {errores.errorLexico(fila(),columna(),lexema());}  

@@ -1,0 +1,28 @@
+package errors;
+
+import alex.UnidadLexica;
+
+public class GestionErroresTiny {
+   public void errorLexico(int fila, int columna, String lexema) {
+     System.out.println("ERROR fila "+fila+" columna "+columna+": Caracter inesperado: "+lexema); 
+     System.exit(1);
+   }  
+   public void errorSintactico(UnidadLexica unidadLexica) {
+     if (unidadLexica.lexema() != null) {
+       System.out.println("ERROR fila "+unidadLexica.fila()+" columna "+unidadLexica.columna()+": Elemento inesperado \""+unidadLexica.lexema()+"\"");
+     } else {
+       System.out.println("ERROR fila "+unidadLexica.fila()+" columna "+unidadLexica.columna()+": Elemento inesperado");
+     }
+     System.exit(1);
+   }
+
+  public void errorIdentificadoresDuplicados(String id) {
+    System.out.println("El identificador " + id + " se ha definido varias veces en el mismo nivel");
+    System.exit(1);
+  }
+
+  public void errorIdentificadorIndefinido(String id) {
+    System.out.println("El identificador " + id + " se ha utilizado antes de ser definido");
+    System.exit(1);
+  }
+}
