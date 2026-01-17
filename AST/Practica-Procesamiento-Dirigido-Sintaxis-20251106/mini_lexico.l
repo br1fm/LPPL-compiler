@@ -37,8 +37,10 @@ separador = [ \t\r\b\n]
 comentario = \#[^\#]*\# 
 identificador = {letra}({letra}|{digito})*
 operadorSuma = \+
+operadorResta = \-
 operadorIgual = \=
 operadorMultiplica = \*
+operadorDivide = \/
 operadorMayor = \>
 operadorIgualIgual = \=\=
 parentesisApertura = \(
@@ -51,10 +53,11 @@ if = si
 else = sino
 int = ent
 bool = bool
+real = real
 longInt = huge
 longLongInt = hugeHuge
 puntocoma = \
-porfavor = porfavor;
+while = while
 
 %%
 {separador}               {}
@@ -65,14 +68,16 @@ porfavor = porfavor;
 {longLongInt}             {return ops.unidadTipoHugeHuge();}
 {longInt}                 {return ops.unidadTipoHuge();}
 {bool}                    {return ops.unidadTipoBool();}
+{real}                    {return ops.unidadTipoReal();}
 {false}                   {return ops.unidadFalse();}
 {true}                    {return ops.unidadTrue();}
 {identificador}           {return ops.unidadId();}
 {numeroEntero}            {return ops.unidadEnt();}
 {operadorSuma}            {return ops.unidadSuma();}
+{operadorResta}           {return ops.unidadResta();}
+{operadorDivide}          {return ops.unidadDivide();}
 {operadorIgual}           {return ops.unidadIgual();}
 {operadorIgualIgual}      {return ops.unidadIgualIgual();}
-{porfavor}                {return ops.unidadPorfavor();}
 {operadorMayor}           {return ops.unidadMayor();}
 {parentesisApertura}      {return ops.unidadPAp();}
 {parentesisCierre}        {return ops.unidadPCierre();}
@@ -80,4 +85,6 @@ porfavor = porfavor;
 {corcheteCierre}          {return ops.unidadCCierre();} 
 {puntocoma}               {return ops.unidadPuntoComa();} 
 {operadorMultiplica}			{return ops.unidadMultiplica();}
+{while}                   {return ops.unidadBucleWhile();}
+
 [^]                       {errores.errorLexico(fila(),columna(),lexema());}  

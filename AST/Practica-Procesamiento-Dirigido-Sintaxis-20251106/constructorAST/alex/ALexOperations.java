@@ -35,6 +35,12 @@ public class ALexOperations {
   public UnidadLexica unidadSuma() {
      return new UnidadLexica(alex.fila(),alex.columna(),ClaseLexica.MAS); 
   } 
+   public UnidadLexica unidadResta() {
+      return new UnidadLexica(alex.fila(), alex.columna(),ClaseLexica.MENOS);
+ }
+ public UnidadLexica unidadDivide() {
+      return new UnidadLexica(alex.fila(), alex.columna(),ClaseLexica.DIVIDE);
+ }
   public UnidadLexica unidadPAp() {
      return new UnidadLexica(alex.fila(),alex.columna(),ClaseLexica.PAP); 
   } 
@@ -71,8 +77,17 @@ public class ALexOperations {
   public UnidadLexica unidadMultiplica() {
      return new UnidadLexica(alex.fila(),alex.columna(),ClaseLexica.MULTIPLICA);
   }
-  public UnidadLexica unidadPorfavor() {
+  /*public UnidadLexica unidadPorfavor() {
      return new UnidadLexica(alex.fila(),alex.columna(),ClaseLexica.PORFAVOR);
-  }
+  }*/
+ public UnidadLexica unidadTipoReal() {
+      return new UnidadLexica(alex.fila(), alex.columna(),ClaseLexica.TIPO_REAL);
+ }
+ public UnidadLexica unidadBucleWhile() {
+      return new UnidadLexica(alex.fila(), alex.columna(),ClaseLexica.BUCLE_WHILE);
+ }
+
+
+
 
 }
