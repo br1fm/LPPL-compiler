@@ -2,10 +2,14 @@
 
 ent x;
 ent y;
+ent u;
+ent n;
 bool b;
 
 b = 89 == verdadero;
 y = y;
+n = 5;
+u = 6;
 
 si (x == y)[
    ent b;
@@ -15,4 +19,5 @@ si (x == y)[
    bool x;
    x = y > 5;
 ]
+n = n * u;
 
