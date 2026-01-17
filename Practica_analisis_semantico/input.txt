@@ -1,0 +1,18 @@
+# Este es un ejemplo #
+
+ent x;
+ent y;
+bool b;
+
+b = 89 == verdadero;
+y = y;
+
+si (x == y)[
+   ent b;
+   b = x + y;
+] sino [
+   b = b == verdadero;
+   bool x;
+   x = y > 5;
+]
+
