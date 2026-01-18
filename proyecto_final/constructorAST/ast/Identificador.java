@@ -27,6 +27,7 @@ public class Identificador extends E {
             errors.add(new ErrorSemantico(this, TipoError.NOIDEN));
         } else {
             this.binding = lookup_variable;
+            lookup_variable.setLeido();
         }
     }
 

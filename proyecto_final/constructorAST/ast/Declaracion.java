@@ -6,10 +6,12 @@ import java.util.LinkedList;
 public class Declaracion extends Instruccion {
   private String name;
   private Type type;
+  private boolean usado;
   
   public Declaracion(Type type, String name) {
    this.type = type;
    this.name = name;
+   this.usado = false;
   }
 
   @Override
@@ -26,6 +28,18 @@ public class Declaracion extends Instruccion {
   public void checkTypes(LinkedList<ErrorSemantico> errors){}
   public Type getType(){ 
     return type; 
+  }
+
+  public String getName(){ 
+    return name; 
+  }
+
+  public void setLeido(){
+    usado = true;
+  }
+
+  public boolean isLeido(){
+    return usado;
   }
   
 }

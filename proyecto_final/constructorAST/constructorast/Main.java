@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import alex.AnalizadorLexicoTiny;
+import ast.Declaracion;
 import ast.Instruccion;
 import ast.TableStack;
 import java.util.LinkedList;
@@ -39,6 +40,14 @@ public class Main {
 		if (errores.size() != 0) {
 			for (ErrorSemantico e : errores) {
 				System.out.println(e + "\n");
+			}
+			System.exit(1);
+		}
+
+		LinkedList<Declaracion> noUsado =  infoBinding.buscaNoUsado();
+		if (noUsado.size() != 0) {
+			for (Declaracion d : noUsado) {
+				System.out.println("Aviso: Variable no leída " + d.getName());
 			}
 			System.exit(1);
 		}

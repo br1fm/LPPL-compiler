@@ -1,6 +1,7 @@
 package ast;
 
 import java.util.HashMap;
+import java.util.Set;
 
 public class TablaSimbolos {
     private HashMap<String, Declaracion> tabla;
@@ -20,4 +21,9 @@ public class TablaSimbolos {
     public boolean contains_id(String id) {
         return tabla.containsKey(id);
     }
+
+    public Set<HashMap.Entry<String, Declaracion>> getTable(){
+        return tabla.entrySet();
+    }
+
 }

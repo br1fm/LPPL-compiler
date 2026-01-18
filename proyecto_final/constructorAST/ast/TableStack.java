@@ -1,6 +1,9 @@
 package ast;
 
 import java.util.Stack;
+import java.util.LinkedList;
+import java.util.Set;
+import java.util.HashMap;
 
 public class TableStack {
     private Stack<TablaSimbolos> stack;
@@ -35,5 +38,23 @@ public class TableStack {
             }
         }
         return null;
+    }
+
+    public LinkedList<Declaracion> buscaNoUsado(){
+        LinkedList<Declaracion> noUsado = new LinkedList<Declaracion>();
+        for(int i = stack.size() - 1; i >= 0; --i) {
+            TablaSimbolos table = stack.get(i);
+
+            Set<HashMap.Entry<String, Declaracion>> tabla = table.getTable();
+
+            tabla.forEach((entry) -> {
+                Declaracion symbol = entry.getValue();
+                if(!symbol.isLeido()) {
+                    noUsado.add(symbol);
+            }
+            });
+        }
+
+        return noUsado;
     }
 }

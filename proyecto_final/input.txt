@@ -6,11 +6,13 @@ bool b;
 huge h;
 
 h = 7e38217498342883974347837438742;
-x = 13;
+x = 31;
 y = 2;
 huge g;
+bool a;
 
 g = 3e2;
+b = a;
 
 si (x == y)[
    b = falso;

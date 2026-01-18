@@ -1,6 +1,5 @@
 
 package errors;
-
 import ast.ASTNode;
 
 public class ErrorEjecucion {
