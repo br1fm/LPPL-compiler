@@ -50,7 +50,9 @@ Inst    ::= Cond: inst
 Inst    ::= Asig: inst
             {: RESULT = inst; :};  
 Inst    ::= Decl: inst
-            {: RESULT = inst; :};           
+            {: RESULT = inst; :};  
+Inst    ::= BUCLE_WHILE PAP E0:cond PCIERRE CAP LInst:cuerpo CCIERRE
+            {: RESULT = new While(cond, cuerpo); :};         
 
 Asig    ::= IDEN: id IGUAL E0: exp PUNTOCOMA
             {: RESULT = new Asignacion(id.lexema, exp); :};
