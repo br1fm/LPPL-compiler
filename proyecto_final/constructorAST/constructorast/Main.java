@@ -49,7 +49,6 @@ public class Main {
 			for (Declaracion d : noUsado) {
 				System.out.println("Aviso: Variable no leída " + d.getName());
 			}
-			System.exit(1);
 		}
 	}
 }
