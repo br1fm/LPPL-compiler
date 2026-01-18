@@ -46,6 +46,10 @@ operadorMultiplica = \*
 operadorDivide = \/
 operadorMayor = \>
 operadorIgualIgual = \=\=
+operadorDistinto = \!\=
+operadorMenor = \<
+operadorMayorIgual = \>\=
+operadorMenorIgual = \<\=
 parentesisApertura = \(
 parentesisCierre = \)
 corcheteApertura = \[
@@ -59,7 +63,7 @@ bool = bool
 real = real
 longInt = huge
 longLongInt = hugeHuge
-puntocoma = \
+puntocoma = \;
 while = while
 
 %%
@@ -83,7 +87,11 @@ while = while
 {operadorDivide}          {return ops.unidadDivide();}
 {operadorIgual}           {return ops.unidadIgual();}
 {operadorIgualIgual}      {return ops.unidadIgualIgual();}
+{operadorDistinto}        {return ops.unidadDistinto();}
 {operadorMayor}           {return ops.unidadMayor();}
+{operadorMenor}           {return ops.unidadMenor();}
+{operadorMayorIgual}      {return ops.unidadMayorIgual();}
+{operadorMenorIgual}      {return ops.unidadMenorIgual();}
 {parentesisApertura}      {return ops.unidadPAp();}
 {parentesisCierre}        {return ops.unidadPCierre();}
 {corcheteApertura}        {return ops.unidadCAp();}

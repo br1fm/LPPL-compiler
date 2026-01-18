@@ -65,8 +65,20 @@ public class ALexOperations {
   public UnidadLexica unidadIgualIgual() {
      return new UnidadLexica(alex.fila(),alex.columna(),ClaseLexica.IGUALIGUAL); 
   }
+  public UnidadLexica unidadDistinto() {
+      return new UnidadLexica(alex.fila(), alex.columna(),ClaseLexica.DISTINTO);
+  }
   public UnidadLexica unidadMayor() {
      return new UnidadLexica(alex.fila(),alex.columna(),ClaseLexica.MAYOR); 
+  }
+  public UnidadLexica unidadMenor() {
+      return new UnidadLexica(alex.fila(), alex.columna(),ClaseLexica.MENOR);
+  }
+  public UnidadLexica unidadMayorIgual() {
+      return new UnidadLexica(alex.fila(), alex.columna(),ClaseLexica.MAYOR_IGUAL);
+  }
+  public UnidadLexica unidadMenorIgual() {
+      return new UnidadLexica(alex.fila(), alex.columna(),ClaseLexica.MENOR_IGUAL);
   }
   public UnidadLexica unidadPuntoComa() {
      return new UnidadLexica(alex.fila(),alex.columna(),ClaseLexica.PUNTOCOMA); 
