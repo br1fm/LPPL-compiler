@@ -1,5 +1,8 @@
 package ast;
 import java.util.LinkedList;
+
+import javax.swing.plaf.basic.BasicBorders.MenuBarBorder;
+
 import errors.ErrorSemantico;
 import errors.TipoError;
 
@@ -35,11 +38,32 @@ public class EBin extends E {
       case IGUAL:
         opstr = "IGUAL";
         break;
+      case IGUALIGUAL:
+        opstr = "IGUALIGUAL";
+        break;
+      case DISTINTO:
+        opstr = "DISTINTO";
+        break;
       case MAYOR:
         opstr = "MAYOR";
-        break; // antes ponía "POR"
+        break;
+      case MENOR:
+        opstr = "MENOR";
+        break;
+      case MAYOR_IGUAL:
+        opstr = "MAYOR_IGUAL";
+        break;
+      case MENOR_IGUAL:
+        opstr = "MENOR_IGUAL";
+        break;
       case MULTIPLICA:
         opstr = "MULTIPLICA";
+        break;
+      case DIVIDE:
+        opstr = "DIVIDE";
+        break;
+      case MENOS:
+        opstr = "MENOS";
         break;
       default:
         break;
@@ -62,10 +86,23 @@ public class EBin extends E {
 
     switch (op) {
       case MAS:
-        if (left_type != Type.NUM || right_type != Type.NUM) {
+        if (!esTipoNumerico(right_type) || !esTipoNumerico(left_type)) {
+          errors.add(new ErrorSemantico(this, TipoError.TYPEOP));
+        }
+
+        type = Type.NUM;
+
+        if(left_type == Type.REAL || right_type == Type.REAL)
+          type = Type.REAL;
+
+        break;
+      case MENOS:
+        if (!esTipoNumerico(right_type) || !esTipoNumerico(left_type)) {
           errors.add(new ErrorSemantico(this, TipoError.TYPEOP));
         }
         type = Type.NUM;
+        if(left_type == Type.REAL || right_type == Type.REAL)
+          type = Type.REAL;
         break;
       case IGUAL:
         if (left_type != right_type) {
@@ -73,21 +110,68 @@ public class EBin extends E {
         }
         type = Type.BOOL;
         break;
+      case IGUALIGUAL:
+        if (left_type != right_type) {
+          errors.add(new ErrorSemantico(this, TipoError.TYPEOP));
+        }
+        type = Type.BOOL;
+        break;
+      case DISTINTO:
+        if (left_type != right_type) {
+          errors.add(new ErrorSemantico(this, TipoError.TYPEOP));
+        }
+        type = Type.BOOL;
+        break;
       case MAYOR:
-        if (left_type != Type.NUM || right_type != Type.NUM) {
+        if (!esTipoNumerico(right_type) || !esTipoNumerico(left_type)) {
+          errors.add(new ErrorSemantico(this, TipoError.TYPEOP));
+        }
+        type = Type.BOOL;
+        break;
+      case MENOR:
+        if (!esTipoNumerico(right_type) || !esTipoNumerico(left_type)) {
+          errors.add(new ErrorSemantico(this, TipoError.TYPEOP));
+        }
+        type = Type.BOOL;
+        break;
+      case MAYOR_IGUAL:
+        if (!esTipoNumerico(right_type) || !esTipoNumerico(left_type)) {
+          errors.add(new ErrorSemantico(this, TipoError.TYPEOP));
+        }
+        type = Type.BOOL;
+        break;
+      case MENOR_IGUAL:
+        if (!esTipoNumerico(right_type) || !esTipoNumerico(left_type)) {
           errors.add(new ErrorSemantico(this, TipoError.TYPEOP));
         }
         type = Type.BOOL;
         break;
       case MULTIPLICA:
-        if (left_type != Type.NUM || right_type != Type.NUM) {
+        if (!esTipoNumerico(right_type) || !esTipoNumerico(left_type)) {
           errors.add(new ErrorSemantico(this, TipoError.TYPEOP));
         }
-        /* TODO: Añadir los operadores binarios restantes */
+
         type = Type.NUM;
+
+        if(left_type == Type.REAL || right_type == Type.REAL)
+          type = Type.REAL;
+        break;
+      case DIVIDE:
+        if (!esTipoNumerico(right_type) || !esTipoNumerico(left_type)) {
+          errors.add(new ErrorSemantico(this, TipoError.TYPEOP));
+        }
+
+        type = Type.NUM;
+
+        if(left_type == Type.REAL || right_type == Type.REAL)
+          type = Type.REAL;
         break;
       default:
         break;
     }
+  }
+
+  boolean esTipoNumerico(Type tipo){
+    return tipo == Type.NUM || tipo == Type.REAL || tipo == Type.HUGE || tipo == Type.HUGEHUGE;
   }
 }

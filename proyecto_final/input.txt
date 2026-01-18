@@ -3,14 +3,16 @@
 ent x;
 ent y;
 bool b;
-hugeHuge h;
+huge h;
 
-h = 738217498342883974347837438742;
+h = 7e38217498342883974347837438742;
 x = 13;
 y = 2;
 huge g;
 
-si (a == y)[
+g = 3e2;
+
+si (x == y)[
    b = falso;
 ] sino [
    b = x == y + 2;
