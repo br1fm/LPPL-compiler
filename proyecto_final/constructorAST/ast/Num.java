@@ -1,5 +1,9 @@
 package ast;
 
+import java.util.LinkedList;
+
+import errors.ErrorSemantico;
+
 public class Num extends E {
   private String v;
   public Num(String v) {
@@ -7,5 +11,9 @@ public class Num extends E {
   }
   public String num() {return v;}
   public KindE kind() {return KindE.NUM;}   
-  public String toString() {return v;}  
+  public String toString() {return v;}
+  
+  public void checkTypes(LinkedList<ErrorSemantico> errors){
+    type = Type.NUM;
+  }
 }

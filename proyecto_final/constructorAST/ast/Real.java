@@ -1,5 +1,9 @@
 package ast;
 
+import java.util.LinkedList;
+
+import errors.ErrorSemantico;
+
 public class Real extends E {
     private String v;
   
@@ -17,5 +21,9 @@ public class Real extends E {
     
     public KindE kind() {
         return KindE.REAL;
+    }
+
+    public void checkTypes(LinkedList<ErrorSemantico> errors){
+        type = Type.REAL;
     }
 }
