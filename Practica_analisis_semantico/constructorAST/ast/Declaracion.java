@@ -16,7 +16,6 @@ public class Declaracion extends Instruccion {
   public KindI kind() { return KindI.DECLARACION;}   
   public String toString() {return "DEC: " + type + " " + name + "\n";}  
 
-
   public void bind(TableStack bind_info, LinkedList<ErrorSemantico> errors){
     if (bind_info.contains_id_peek(name)){
       errors.add(new ErrorSemantico(this, TipoError.DUPIDEN));

@@ -1,4 +1,7 @@
 package ast;
+import errors.ErrorSemantico;
+import errors.TipoError;
+import java.util.LinkedList;
 
 public class Declaracion extends Instruccion {
   private String name;

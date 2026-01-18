@@ -6,6 +6,9 @@ import errors.TipoError;
 public class Asignacion extends Instruccion {
   private String variable;
   private E valor;
+
+  private Declaracion variable_binding;
+
   public Asignacion(String variable, E valor) {
 	  this.variable = variable;
 	  this.valor = valor;   

@@ -1,4 +1,7 @@
 package ast;
+import java.util.LinkedList;
+import errors.ErrorSemantico;
+import errors.TipoError;
 
 public class EBin extends E {
   private E opnd1;
