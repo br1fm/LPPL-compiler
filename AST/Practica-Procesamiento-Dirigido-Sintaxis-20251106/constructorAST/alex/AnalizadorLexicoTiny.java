@@ -65,12 +65,12 @@ public class AnalizadorLexicoTiny implements java_cup.runtime.Scanner {
 
   private static final String ZZ_CMAP_BLOCKS_PACKED_0 =
     "\10\0\3\1\2\0\1\1\22\0\1\1\2\0\1\2"+
-    "\4\0\1\3\1\4\1\5\1\6\1\0\1\7\1\0"+
-    "\1\10\1\11\11\12\3\0\1\13\1\14\2\0\7\15"+
-    "\1\16\22\15\1\17\1\20\1\21\3\0\1\22\1\23"+
-    "\1\15\1\24\1\25\1\26\1\27\1\30\1\31\2\15"+
-    "\1\32\1\15\1\33\1\34\2\15\1\35\1\36\1\37"+
-    "\1\40\1\41\4\15\u0185\0";
+    "\4\0\1\3\1\4\1\5\1\6\1\0\1\7\1\10"+
+    "\1\11\1\12\11\13\3\0\1\14\1\15\2\0\4\16"+
+    "\1\17\2\16\1\20\22\16\1\21\1\22\1\23\3\0"+
+    "\1\24\1\25\1\16\1\26\1\27\1\30\1\31\1\32"+
+    "\1\33\2\16\1\34\1\16\1\35\1\36\2\16\1\37"+
+    "\1\40\1\41\1\42\1\43\4\16\u0185\0";
 
   private static int [] zzUnpackcmap_blocks() {
     int [] result = new int[512];
@@ -99,12 +99,13 @@ public class AnalizadorLexicoTiny implements java_cup.runtime.Scanner {
   private static final String ZZ_ACTION_PACKED_0 =
     "\1\0\1\1\1\2\1\1\1\3\1\4\1\5\1\6"+
     "\1\7\1\10\2\11\1\12\1\13\1\14\1\15\1\16"+
-    "\1\17\7\14\1\0\1\20\5\14\1\21\2\14\1\22"+
-    "\5\14\1\23\1\14\1\24\1\25\1\26\1\14\1\27"+
-    "\6\14\1\30\1\14\1\31";
+    "\1\17\7\14\4\0\1\20\5\14\1\21\1\14\1\22"+
+    "\2\0\1\23\1\14\1\24\5\14\1\0\1\25\1\14"+
+    "\1\26\1\27\1\30\1\14\1\31\6\14\1\32\1\14"+
+    "\1\33";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[57];
+    int [] result = new int[65];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -129,17 +130,18 @@ public class AnalizadorLexicoTiny implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\42\0\42\0\104\0\42\0\42\0\42\0\42"+
-    "\0\42\0\42\0\42\0\146\0\210\0\42\0\252\0\42"+
-    "\0\42\0\42\0\314\0\356\0\u0110\0\u0132\0\u0154\0\u0176"+
-    "\0\u0198\0\104\0\42\0\u01ba\0\u01dc\0\u01fe\0\u0220\0\u0242"+
-    "\0\u0264\0\u0286\0\u02a8\0\252\0\u02ca\0\u02ec\0\u030e\0\u0330"+
-    "\0\u0352\0\252\0\u0374\0\u0396\0\252\0\252\0\u03b8\0\252"+
-    "\0\u03da\0\u03fc\0\u041e\0\u0440\0\u0462\0\u0484\0\252\0\u04a6"+
-    "\0\252";
+    "\0\0\0\44\0\44\0\110\0\44\0\44\0\44\0\44"+
+    "\0\44\0\44\0\154\0\220\0\264\0\44\0\330\0\44"+
+    "\0\44\0\44\0\374\0\u0120\0\u0144\0\u0168\0\u018c\0\u01b0"+
+    "\0\u01d4\0\110\0\u01f8\0\u021c\0\u0240\0\44\0\u0264\0\u0288"+
+    "\0\u02ac\0\u02d0\0\u02f4\0\u0318\0\u033c\0\u0360\0\u0384\0\u03a8"+
+    "\0\u03a8\0\u03cc\0\330\0\u03f0\0\u0414\0\u0438\0\u045c\0\u0480"+
+    "\0\u04a4\0\330\0\u04c8\0\u04ec\0\330\0\330\0\u0510\0\330"+
+    "\0\u0534\0\u0558\0\u057c\0\u05a0\0\u05c4\0\u05e8\0\330\0\u060c"+
+    "\0\330";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[57];
+    int [] result = new int[65];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -163,43 +165,49 @@ public class AnalizadorLexicoTiny implements java_cup.runtime.Scanner {
 
   private static final String ZZ_TRANS_PACKED_0 =
     "\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11"+
-    "\1\12\1\13\1\14\1\15\1\16\2\17\1\20\1\21"+
-    "\1\22\1\17\1\23\1\17\1\24\1\25\1\17\1\26"+
-    "\4\17\1\27\1\30\2\17\1\31\42\0\2\32\1\3"+
-    "\37\32\11\0\2\14\42\0\1\33\37\0\2\17\2\0"+
-    "\2\17\3\0\20\17\11\0\2\17\2\0\2\17\3\0"+
-    "\12\17\1\34\5\17\11\0\2\17\2\0\2\17\3\0"+
-    "\11\17\1\35\6\17\11\0\2\17\2\0\2\17\3\0"+
-    "\1\36\17\17\11\0\2\17\2\0\2\17\3\0\16\17"+
-    "\1\37\1\17\11\0\2\17\2\0\2\17\3\0\3\17"+
-    "\1\40\14\17\11\0\2\17\2\0\2\17\3\0\7\17"+
-    "\1\41\10\17\11\0\2\17\2\0\2\17\3\0\3\17"+
-    "\1\42\14\17\11\0\2\17\2\0\2\17\3\0\12\17"+
-    "\1\43\5\17\11\0\2\17\2\0\2\17\3\0\15\17"+
-    "\1\44\2\17\11\0\2\17\2\0\2\17\3\0\10\17"+
-    "\1\45\7\17\11\0\2\17\2\0\2\17\3\0\5\17"+
-    "\1\46\12\17\11\0\2\17\2\0\2\17\3\0\1\47"+
-    "\17\17\11\0\2\17\2\0\2\17\3\0\11\17\1\50"+
-    "\6\17\11\0\2\17\2\0\2\17\3\0\13\17\1\51"+
-    "\4\17\11\0\2\17\2\0\2\17\3\0\10\17\1\52"+
-    "\7\17\11\0\2\17\2\0\2\17\3\0\14\17\1\53"+
-    "\3\17\11\0\2\17\2\0\2\17\3\0\3\17\1\54"+
-    "\14\17\11\0\2\17\2\0\2\17\3\0\10\17\1\55"+
-    "\7\17\11\0\2\17\2\0\2\17\3\0\12\17\1\56"+
-    "\5\17\11\0\2\17\2\0\2\17\3\0\2\17\1\57"+
-    "\15\17\11\0\2\17\2\0\2\17\3\0\12\17\1\60"+
-    "\5\17\11\0\2\17\2\0\1\17\1\61\3\0\20\17"+
-    "\11\0\2\17\2\0\2\17\3\0\1\62\17\17\11\0"+
-    "\2\17\2\0\2\17\3\0\16\17\1\63\1\17\11\0"+
-    "\2\17\2\0\2\17\3\0\2\17\1\64\15\17\11\0"+
-    "\2\17\2\0\2\17\3\0\5\17\1\65\12\17\11\0"+
-    "\2\17\2\0\2\17\3\0\3\17\1\66\14\17\11\0"+
-    "\2\17\2\0\2\17\3\0\3\17\1\67\14\17\11\0"+
-    "\2\17\2\0\2\17\3\0\13\17\1\70\4\17\11\0"+
-    "\2\17\2\0\2\17\3\0\12\17\1\71\5\17";
+    "\1\2\1\12\1\13\1\14\1\15\1\16\3\17\1\20"+
+    "\1\21\1\22\1\17\1\23\1\17\1\24\1\25\1\17"+
+    "\1\26\4\17\1\27\1\30\2\17\1\31\44\0\2\32"+
+    "\1\3\41\32\10\0\1\33\1\0\2\34\3\0\1\35"+
+    "\7\0\1\35\24\0\1\33\1\0\2\14\3\0\1\35"+
+    "\7\0\1\35\30\0\1\36\41\0\2\17\2\0\3\17"+
+    "\3\0\20\17\12\0\2\17\2\0\3\17\3\0\12\17"+
+    "\1\37\5\17\12\0\2\17\2\0\3\17\3\0\11\17"+
+    "\1\40\6\17\12\0\2\17\2\0\3\17\3\0\1\41"+
+    "\17\17\12\0\2\17\2\0\3\17\3\0\16\17\1\42"+
+    "\1\17\12\0\2\17\2\0\3\17\3\0\3\17\1\43"+
+    "\14\17\12\0\2\17\2\0\3\17\3\0\7\17\1\44"+
+    "\10\17\12\0\2\17\2\0\3\17\3\0\3\17\1\45"+
+    "\14\17\12\0\2\46\40\0\1\47\1\0\2\34\3\0"+
+    "\1\35\7\0\1\35\22\0\2\50\2\0\2\51\42\0"+
+    "\2\17\2\0\3\17\3\0\12\17\1\52\5\17\12\0"+
+    "\2\17\2\0\3\17\3\0\15\17\1\53\2\17\12\0"+
+    "\2\17\2\0\3\17\3\0\10\17\1\54\7\17\12\0"+
+    "\2\17\2\0\3\17\3\0\5\17\1\55\12\17\12\0"+
+    "\2\17\2\0\3\17\3\0\1\56\17\17\12\0\2\17"+
+    "\2\0\3\17\3\0\11\17\1\57\6\17\12\0\2\17"+
+    "\2\0\3\17\3\0\13\17\1\60\4\17\12\0\2\46"+
+    "\3\0\1\35\7\0\1\35\26\0\2\61\42\0\2\51"+
+    "\42\0\2\17\2\0\3\17\3\0\10\17\1\62\7\17"+
+    "\12\0\2\17\2\0\3\17\3\0\14\17\1\63\3\17"+
+    "\12\0\2\17\2\0\3\17\3\0\3\17\1\64\14\17"+
+    "\12\0\2\17\2\0\3\17\3\0\10\17\1\65\7\17"+
+    "\12\0\2\17\2\0\3\17\3\0\12\17\1\66\5\17"+
+    "\12\0\2\17\2\0\3\17\3\0\2\17\1\67\15\17"+
+    "\12\0\2\61\3\0\1\35\7\0\1\35\26\0\2\17"+
+    "\2\0\3\17\3\0\12\17\1\70\5\17\12\0\2\17"+
+    "\2\0\2\17\1\71\3\0\20\17\12\0\2\17\2\0"+
+    "\3\17\3\0\1\72\17\17\12\0\2\17\2\0\3\17"+
+    "\3\0\16\17\1\73\1\17\12\0\2\17\2\0\3\17"+
+    "\3\0\2\17\1\74\15\17\12\0\2\17\2\0\3\17"+
+    "\3\0\5\17\1\75\12\17\12\0\2\17\2\0\3\17"+
+    "\3\0\3\17\1\76\14\17\12\0\2\17\2\0\3\17"+
+    "\3\0\3\17\1\77\14\17\12\0\2\17\2\0\3\17"+
+    "\3\0\13\17\1\100\4\17\12\0\2\17\2\0\3\17"+
+    "\3\0\12\17\1\101\5\17";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[1224];
+    int [] result = new int[1584];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -242,11 +250,11 @@ public class AnalizadorLexicoTiny implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\2\11\1\1\7\11\2\1\1\11\1\1\3\11"+
-    "\7\1\1\0\1\11\36\1";
+    "\1\0\2\11\1\1\6\11\3\1\1\11\1\1\3\11"+
+    "\7\1\4\0\1\11\10\1\2\0\10\1\1\0\20\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[57];
+    int [] result = new int[65];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -744,127 +752,137 @@ public class AnalizadorLexicoTiny implements java_cup.runtime.Scanner {
             { errores.errorLexico(fila(),columna(),lexema());
             }
             // fall through
-          case 26: break;
+          case 28: break;
           case 2:
             { 
             }
             // fall through
-          case 27: break;
+          case 29: break;
           case 3:
             { return ops.unidadPAp();
             }
             // fall through
-          case 28: break;
+          case 30: break;
           case 4:
             { return ops.unidadPCierre();
             }
             // fall through
-          case 29: break;
+          case 31: break;
           case 5:
             { return ops.unidadMultiplica();
             }
             // fall through
-          case 30: break;
+          case 32: break;
           case 6:
             { return ops.unidadSuma();
             }
             // fall through
-          case 31: break;
+          case 33: break;
           case 7:
             { return ops.unidadResta();
             }
             // fall through
-          case 32: break;
+          case 34: break;
           case 8:
             { return ops.unidadDivide();
             }
             // fall through
-          case 33: break;
+          case 35: break;
           case 9:
             { return ops.unidadEnt();
             }
             // fall through
-          case 34: break;
+          case 36: break;
           case 10:
             { return ops.unidadIgual();
             }
             // fall through
-          case 35: break;
+          case 37: break;
           case 11:
             { return ops.unidadMayor();
             }
             // fall through
-          case 36: break;
+          case 38: break;
           case 12:
             { return ops.unidadId();
             }
             // fall through
-          case 37: break;
+          case 39: break;
           case 13:
             { return ops.unidadCAp();
             }
             // fall through
-          case 38: break;
+          case 40: break;
           case 14:
             { return ops.unidadPuntoComa();
             }
             // fall through
-          case 39: break;
+          case 41: break;
           case 15:
             { return ops.unidadCCierre();
             }
             // fall through
-          case 40: break;
+          case 42: break;
           case 16:
             { return ops.unidadIgualIgual();
             }
             // fall through
-          case 41: break;
+          case 43: break;
           case 17:
             { return ops.unidadIf();
             }
             // fall through
-          case 42: break;
-          case 18:
-            { return ops.unidadTipoEnt();
-            }
-            // fall through
-          case 43: break;
-          case 19:
-            { return ops.unidadTipoBool();
-            }
-            // fall through
           case 44: break;
-          case 20:
-            { return ops.unidadTipoHuge();
+          case 18:
+            { return ops.unidadNumReal();
             }
             // fall through
           case 45: break;
-          case 21:
-            { return ops.unidadTipoReal();
+          case 19:
+            { return ops.unidadNumHuge();
             }
             // fall through
           case 46: break;
-          case 22:
-            { return ops.unidadElse();
+          case 20:
+            { return ops.unidadTipoEnt();
             }
             // fall through
           case 47: break;
-          case 23:
-            { return ops.unidadFalse();
+          case 21:
+            { return ops.unidadTipoBool();
             }
             // fall through
           case 48: break;
-          case 24:
-            { return ops.unidadTipoHugeHuge();
+          case 22:
+            { return ops.unidadTipoHuge();
             }
             // fall through
           case 49: break;
-          case 25:
-            { return ops.unidadTrue();
+          case 23:
+            { return ops.unidadTipoReal();
             }
             // fall through
           case 50: break;
+          case 24:
+            { return ops.unidadElse();
+            }
+            // fall through
+          case 51: break;
+          case 25:
+            { return ops.unidadFalse();
+            }
+            // fall through
+          case 52: break;
+          case 26:
+            { return ops.unidadTipoHugeHuge();
+            }
+            // fall through
+          case 53: break;
+          case 27:
+            { return ops.unidadTrue();
+            }
+            // fall through
+          case 54: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }

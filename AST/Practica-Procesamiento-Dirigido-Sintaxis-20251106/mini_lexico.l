@@ -32,7 +32,10 @@ import errors.GestionErroresTiny;
 letra  = ([A-Z]|[a-z])
 digitoPositivo = [1-9]
 digito = ({digitoPositivo}|0)
+exponente = [eE][\+\-]?{digito}+
 numeroEntero = {digitoPositivo}{digito}*|0
+numeroReal = {digitoPositivo}{digito}*\.{digito}+|0\.{digito}+
+numeroHuge = ({digito}+|{digito}+\.{digito}+){exponente}
 separador = [ \t\r\b\n]
 comentario = \#[^\#]*\# 
 identificador = {letra}({letra}|{digito})*
@@ -73,6 +76,8 @@ while = while
 {true}                    {return ops.unidadTrue();}
 {identificador}           {return ops.unidadId();}
 {numeroEntero}            {return ops.unidadEnt();}
+{numeroReal}              {return ops.unidadNumReal();}
+{numeroHuge}              {return ops.unidadNumHuge();}
 {operadorSuma}            {return ops.unidadSuma();}
 {operadorResta}           {return ops.unidadResta();}
 {operadorDivide}          {return ops.unidadDivide();}

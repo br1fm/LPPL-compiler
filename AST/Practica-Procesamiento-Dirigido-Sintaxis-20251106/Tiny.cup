@@ -28,7 +28,7 @@ init with {:
 terminal IF, ELSE, TIPO_ENT, TRUE, FALSE, TIPO_BOOL, TIPO_HUGE, TIPO_HUGEHUGE, TIPO_REAL,
 MAS, MENOS, IGUAL, IGUALIGUAL, MAYOR, PAP, PCIERRE, CAP, CCIERRE, PUNTOCOMA, MULTIPLICA, DIVIDE, BUCLE_WHILE;
 
-terminal TokenValue IDEN, ENT, HUGE, HUGEHUGE;
+terminal TokenValue IDEN, ENT, REAL, HUGE;
 non terminal LinkedList<Instruccion> P, LInst, ElseCase;
 non terminal Instruccion Inst, Cond, Asig, Decl;
 non terminal E E0, E1, E2, E3, E4;

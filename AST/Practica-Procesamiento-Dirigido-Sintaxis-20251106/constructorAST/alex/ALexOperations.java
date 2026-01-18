@@ -19,7 +19,13 @@ public class ALexOperations {
   }
   public UnidadLexica unidadEnt() {
      return new UnidadLexica(alex.fila(),alex.columna(),ClaseLexica.ENT,alex.lexema()); 
-  } 
+  }
+   public UnidadLexica unidadNumReal() {
+     return new UnidadLexica(alex.fila(),alex.columna(),ClaseLexica.REAL,alex.lexema()); 
+  }
+  public UnidadLexica unidadNumHuge() {
+      return new UnidadLexica(alex.fila(), alex.columna(), ClaseLexica.HUGE, alex.lexema());
+  }
   public UnidadLexica unidadTipoEnt() {
      return new UnidadLexica(alex.fila(),alex.columna(),ClaseLexica.TIPO_ENT); 
   }
