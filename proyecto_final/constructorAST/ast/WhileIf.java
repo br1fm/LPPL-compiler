@@ -82,4 +82,20 @@ public class WhileIf extends Instruccion {
     }
 
   }
+
+  public void execute() {
+  while(condBucle.execute().intValue() == 1){
+
+    if(condIf.execute().intValue() == 1){
+      for(Instruccion instr : body) {
+          instr.execute();
+      }  
+    } else {
+      for(Instruccion instr : bodyElse) {
+        instr.execute();
+      }  
+    }
+  }
+}
+
 }

@@ -74,6 +74,18 @@ Decl    ::= TIPO_HUGE IDEN: id PUNTOCOMA
 Decl    ::= TIPO_HUGEHUGE IDEN: id PUNTOCOMA
             {: RESULT = new Declaracion(Type.HUGEHUGE, id.lexema); :};
 
+Decl    ::= TIPO_ENT IDEN:id CAP ENT:tam CCIERRE PUNTOCOMA
+            {: RESULT = new DeclaracionArray(Type.NUM, id.lexema, tam.lexema); :};
+
+Decl    ::= TIPO_BOOL IDEN:id CAP ENT:tam CCIERRE PUNTOCOMA
+            {: RESULT = new DeclaracionArray(Type.BOOL, id.lexema, tam.lexema); :};
+
+Decl    ::= TIPO_REAL IDEN:id CAP ENT:tam CCIERRE PUNTOCOMA
+            {: RESULT = new DeclaracionArray(Type.REAL, id.lexema, tam.lexema); :};
+
+Decl    ::= TIPO_HUGE IDEN:id CAP ENT:tam CCIERRE PUNTOCOMA
+            {: RESULT = new DeclaracionArray(Type.HUGE, id.lexema, tam.lexema); :};
+
 Cond    ::= IF PAP E0: exp PCIERRE CAP LInst: inst_if CCIERRE ElseCase: inst_else
             {: RESULT = new Condicional(exp, inst_if, inst_else); :};
 ElseCase::= ELSE CAP LInst: l CCIERRE
