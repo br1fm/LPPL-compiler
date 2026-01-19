@@ -65,12 +65,15 @@ longInt = huge
 longLongInt = hugeHuge
 puntocoma = \;
 while = while
+whileif = whif
 
 %%
 {separador}               {}
 {comentario}              {}
 {if}                      {return ops.unidadIf();}
 {else}                    {return ops.unidadElse();}
+{while}                   {return ops.unidadBucleWhile();}
+{whileif}                 {return ops.unidadWhileIf();}
 {int}                     {return ops.unidadTipoEnt();}
 {longLongInt}             {return ops.unidadTipoHugeHuge();}
 {longInt}                 {return ops.unidadTipoHuge();}
@@ -98,6 +101,4 @@ while = while
 {corcheteCierre}          {return ops.unidadCCierre();} 
 {puntocoma}               {return ops.unidadPuntoComa();} 
 {operadorMultiplica}			{return ops.unidadMultiplica();}
-{while}                   {return ops.unidadBucleWhile();}
-
 [^]                       {errores.errorLexico(fila(),columna(),lexema());}  

@@ -27,11 +27,11 @@ init with {:
 
 terminal IF, ELSE, TIPO_ENT, TRUE, FALSE, TIPO_BOOL, TIPO_HUGE, TIPO_HUGEHUGE, TIPO_REAL,
 MAS, MENOS, IGUAL, IGUALIGUAL, DISTINTO, MAYOR, MENOR, MAYOR_IGUAL, MENOR_IGUAL, PAP, PCIERRE, CAP, 
-CCIERRE, PUNTOCOMA, MULTIPLICA, DIVIDE, BUCLE_WHILE;
+CCIERRE, PUNTOCOMA, MULTIPLICA, DIVIDE, BUCLE_WHILE, WHILEIF;
 
 terminal TokenValue IDEN, ENT, REAL, HUGE;
 non terminal LinkedList<Instruccion> P, LInst, ElseCase;
-non terminal Instruccion Inst, Cond, Asig, Decl;
+non terminal Instruccion Inst, Cond, Asig, Decl, Bucle, BucleCond;
 non terminal E E0, E1, E2, E3, E4;
 
 
@@ -51,8 +51,10 @@ Inst    ::= Asig: inst
             {: RESULT = inst; :};  
 Inst    ::= Decl: inst
             {: RESULT = inst; :};  
-Inst    ::= BUCLE_WHILE PAP E0:cond PCIERRE CAP LInst:cuerpo CCIERRE
-            {: RESULT = new While(cond, cuerpo); :};         
+Inst    ::= Bucle: inst
+            {: RESULT = inst; :}; 
+Inst    ::= BucleCond: inst
+            {: RESULT = inst; :}; 
 
 Asig    ::= IDEN: id IGUAL E0: exp PUNTOCOMA
             {: RESULT = new Asignacion(id.lexema, exp); :};
@@ -76,6 +78,10 @@ Cond    ::= IF PAP E0: exp PCIERRE CAP LInst: inst_if CCIERRE ElseCase: inst_els
             {: RESULT = new Condicional(exp, inst_if, inst_else); :};
 ElseCase::= ELSE CAP LInst: l CCIERRE
             {: RESULT = l; :};
+Bucle    ::= BUCLE_WHILE PAP E0:cond PCIERRE CAP LInst:cuerpo CCIERRE
+            {: RESULT = new While(cond, cuerpo); :};         
+BucleCond::= WHILEIF PAP E0:condBucle PUNTOCOMA E0:condIf PCIERRE CAP LInst:cuerpo CCIERRE ElseCase:cuerpoElse
+            {: RESULT = new WhileIf(condBucle, condIf, cuerpo, cuerpoElse); :};
 
             
 E0      ::= E0:op1 IGUALIGUAL E1:op2
