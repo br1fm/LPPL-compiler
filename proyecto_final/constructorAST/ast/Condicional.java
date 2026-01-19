@@ -65,5 +65,18 @@ public class Condicional extends Instruccion {
       instr.checkTypes(errors);
     }
   }
+
+  public void execute(){
+    Number value = condicion.execute();
+    if (value == Integer.valueOf(1)){
+      for(Instruccion instr : inst_IF) {
+        instr.execute();
+      }
+    } else if (value == Integer.valueOf(0)){
+      for(Instruccion instr : inst_ELSE) {
+        instr.execute();
+      }    
+    }
+  }
 }
 

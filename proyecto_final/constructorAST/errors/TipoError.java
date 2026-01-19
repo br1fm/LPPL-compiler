@@ -5,5 +5,7 @@ public enum TipoError {
     NOIDEN,
     TYPEOP, 
     TYPECOND,
-    TYPEASIG    
+    TYPEASIG,
+    NOVALUE,
+    TOOBIG    
 }

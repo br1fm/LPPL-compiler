@@ -1,6 +1,8 @@
 package ast;
 
 import java.util.LinkedList;
+
+import errors.ErrorEjecucion;
 import errors.ErrorSemantico;
 import errors.TipoError;
 
@@ -34,5 +36,14 @@ public class Identificador extends E {
     public void checkTypes(LinkedList<ErrorSemantico> errors) {
         Type bind_type = binding.getType();
         type = bind_type;
+    }
+
+    public Number execute() {
+        Number value = binding.getValue();
+        if (value == null) {
+            ErrorEjecucion error = new ErrorEjecucion(this, TipoError.NOVALUE);
+            error.gestionaError();
+        }
+        return value;
     }
 }

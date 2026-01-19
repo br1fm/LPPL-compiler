@@ -52,7 +52,7 @@ public class Asignacion extends Instruccion {
   }
 
   public void execute(){
-    Integer value = valor.execute();
+    Number value = valor.execute();
     variable_binding.setValue(value);
   }
 

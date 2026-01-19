@@ -24,10 +24,10 @@ public class While extends Instruccion {
 
     
   public void bind(TableStack bind_info, LinkedList<ErrorSemantico> errors){
-    // Bind the conditional expression
+    // Hacemos bind de la condición
     cond.bind(bind_info, errors);
 
-    // Open new block and bind the IF branch
+    // Añadimos un nuevo bloque a la pila y hacemos bind para todas sus instrucciones
     bind_info.push();
     for(Instruccion instr : body) {
       instr.bind(bind_info, errors);
@@ -36,16 +36,26 @@ public class While extends Instruccion {
   }
 
   public void checkTypes(LinkedList<ErrorSemantico> errors){
-    // Check that the conditional is of type bool
+    // Comprobar que la condición es un booleano
     cond.checkTypes(errors);
     Type left_type = cond.getType();
     if (left_type != Type.BOOL){
       errors.add(new ErrorSemantico(cond, TipoError.TYPECOND));
     }
     
-    // Check that the branches are well typed
+    // Comprobar que las instrucciones dentro del bloque no tengan errores de tipado
     for(Instruccion instr : body) {
       instr.checkTypes(errors);
+    }
+  }
+
+  // Ejecución
+  public void execute(){
+    // Ejecutar las instrucciones de bloque mientras se cumpla la condición
+    while(cond.execute().intValue() == 1){
+      for(Instruccion instr : body) {
+        instr.execute();
+      }  
     }
   }
 }

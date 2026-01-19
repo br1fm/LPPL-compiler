@@ -15,4 +15,7 @@ public class HugeHuge extends E {
   public void checkTypes(LinkedList<ErrorSemantico> errors){
       type = Type.HUGEHUGE;
   }
+  public Number execute(){
+    return Integer.parseInt(v);
+  }
 }

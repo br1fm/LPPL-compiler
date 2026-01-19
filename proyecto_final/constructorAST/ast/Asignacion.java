@@ -51,4 +51,9 @@ public class Asignacion extends Instruccion {
     }
   }
 
+  public void execute(){
+    Number value = valor.execute();
+    variable_binding.setValue(value);
+  }
+
 }   

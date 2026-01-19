@@ -3,7 +3,7 @@ package ast;
 import java.util.Stack;
 import java.util.LinkedList;
 import java.util.Set;
-import java.util.HashMap;
+import java.util.Map;
 
 public class TableStack {
     private Stack<TablaSimbolos> stack;
@@ -29,6 +29,10 @@ public class TableStack {
         return stack.peek().contains_id(id);
     }
 
+    public TablaSimbolos peek(){
+        return stack.peek();
+    }
+
     public Declaracion lookup(String id) {
         for(int i = stack.size() - 1; i >= 0; --i) {
             TablaSimbolos table = stack.get(i);
@@ -45,7 +49,7 @@ public class TableStack {
         for(int i = stack.size() - 1; i >= 0; --i) {
             TablaSimbolos table = stack.get(i);
 
-            Set<HashMap.Entry<String, Declaracion>> tabla = table.getTable();
+            Set<Map.Entry<String, Declaracion>> tabla = table.getTable();
 
             tabla.forEach((entry) -> {
                 Declaracion symbol = entry.getValue();

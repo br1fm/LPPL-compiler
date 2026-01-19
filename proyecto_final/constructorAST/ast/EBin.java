@@ -1,10 +1,14 @@
 package ast;
+
+import java.nio.channels.MulticastChannel;
 import java.util.LinkedList;
+import java.util.concurrent.ThreadPoolExecutor.DiscardOldestPolicy;
 
 import javax.swing.plaf.basic.BasicBorders.MenuBarBorder;
 
 import errors.ErrorSemantico;
 import errors.TipoError;
+import util.Util;
 
 public class EBin extends E {
   private E opnd1;
@@ -92,7 +96,7 @@ public class EBin extends E {
 
         type = Type.NUM;
 
-        if(left_type == Type.REAL || right_type == Type.REAL)
+        if (left_type == Type.REAL || right_type == Type.REAL)
           type = Type.REAL;
 
         break;
@@ -101,7 +105,7 @@ public class EBin extends E {
           errors.add(new ErrorSemantico(this, TipoError.TYPEOP));
         }
         type = Type.NUM;
-        if(left_type == Type.REAL || right_type == Type.REAL)
+        if (left_type == Type.REAL || right_type == Type.REAL)
           type = Type.REAL;
         break;
       case IGUAL:
@@ -153,7 +157,7 @@ public class EBin extends E {
 
         type = Type.NUM;
 
-        if(left_type == Type.REAL || right_type == Type.REAL)
+        if (left_type == Type.REAL || right_type == Type.REAL)
           type = Type.REAL;
         break;
       case DIVIDE:
@@ -163,7 +167,7 @@ public class EBin extends E {
 
         type = Type.NUM;
 
-        if(left_type == Type.REAL || right_type == Type.REAL)
+        if (left_type == Type.REAL || right_type == Type.REAL)
           type = Type.REAL;
         break;
       default:
@@ -171,7 +175,82 @@ public class EBin extends E {
     }
   }
 
-  boolean esTipoNumerico(Type tipo){
+  boolean esTipoNumerico(Type tipo) {
     return tipo == Type.NUM || tipo == Type.REAL || tipo == Type.HUGE || tipo == Type.HUGEHUGE;
+  }
+
+  public Number execute() {
+
+    // Execute the child nodes
+    Number left_value = opnd1.execute();
+    Number right_value = opnd2.execute();
+
+    Number value;
+
+    switch (op) {
+      case MAS:
+        value = Util.addNumbers(left_value, right_value);
+        break;
+      case MENOS:
+        value = Util.substractNumbers(left_value, right_value);
+        break;
+      case MULTIPLICA:
+        value = Util.multiplyNumbers(left_value, right_value);
+        break;
+      case DIVIDE:
+        value = Util.divideNumbers(left_value, right_value);
+        break;
+
+      // case IGUAL: NO ESTÁ PORQUE NO TIENE QUE ESTAR, las asignaciones van en la
+      // clase Asignacion
+      case IGUALIGUAL:
+        if (Util.compareNumbers(left_value, right_value) == 0) {
+          value = 1;
+        } else {
+          value = 0;
+        }
+        break;
+      case DISTINTO:
+        if (Util.compareNumbers(left_value, right_value) != 0) {
+          value = 1;
+        } else {
+          value = 0;
+        }
+        break;
+      case MAYOR:
+        if (Util.compareNumbers(left_value, right_value) == 1) {
+          value = 1;
+        } else {
+          value = 0;
+        }
+        break;
+      case MAYOR_IGUAL:
+        int resMayor = Util.compareNumbers(left_value, right_value);
+        if (resMayor == 1 || resMayor == 0) {
+          value = 1;
+        } else {
+          value = 0;
+        }
+        break;
+      case MENOR:
+        if (Util.compareNumbers(left_value, right_value) == -1) {
+          value = 1;
+        } else {
+          value = 0;
+        }
+        break;
+      case MENOR_IGUAL:
+        int resMenor = Util.compareNumbers(left_value, right_value);
+        if (resMenor == -1 || resMenor == 0) {
+          value = 1;
+        } else {
+          value = 0;
+        }
+        break;
+      default:
+        value = 0;
+        break;
+    }
+    return value;
   }
 }

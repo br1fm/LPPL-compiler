@@ -16,4 +16,8 @@ public class Num extends E {
   public void checkTypes(LinkedList<ErrorSemantico> errors){
     type = Type.NUM;
   }
+
+  public Number execute(){
+    return Integer.parseInt(v);
+  }
 }

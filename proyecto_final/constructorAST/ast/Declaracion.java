@@ -7,11 +7,13 @@ public class Declaracion extends Instruccion {
   private String name;
   private Type type;
   private boolean usado;
+  private Number value;
   
   public Declaracion(Type type, String name) {
    this.type = type;
    this.name = name;
    this.usado = false;
+   this.value = null;
   }
 
   @Override
@@ -42,4 +44,14 @@ public class Declaracion extends Instruccion {
     return usado;
   }
   
+  public Number getValue(){
+    return value;
+  }
+
+  public void setValue(Number value){
+    this.value = value;
+  }
+
+  public void execute(){};
+
 }

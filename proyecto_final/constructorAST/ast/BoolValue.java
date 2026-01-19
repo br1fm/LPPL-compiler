@@ -21,4 +21,9 @@ public class BoolValue extends E {
     type = Type.BOOL;
   }
 
+  public Integer execute(){
+    if (valor == "true") return 1;
+    else return 0;
+  }
+
 }

@@ -23,4 +23,7 @@ public abstract class E implements ASTNode {
     public Type getType(){
         return type;
     };
+
+    // Ejecución
+    public abstract Number execute();
 }
