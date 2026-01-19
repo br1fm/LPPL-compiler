@@ -89,9 +89,6 @@ public class ALexOperations {
   public UnidadLexica unidadTipoHuge() {
      return new UnidadLexica(alex.fila(),alex.columna(),ClaseLexica.TIPO_HUGE);
   }
-  public UnidadLexica unidadTipoHugeHuge() {
-     return new UnidadLexica(alex.fila(),alex.columna(),ClaseLexica.TIPO_HUGEHUGE);
-  }
   public UnidadLexica unidadMultiplica() {
      return new UnidadLexica(alex.fila(),alex.columna(),ClaseLexica.MULTIPLICA);
   }

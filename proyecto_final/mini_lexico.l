@@ -74,7 +74,6 @@ whileif = whif
 {while}                   {return ops.unidadBucleWhile();}
 {whileif}                 {return ops.unidadWhileIf();}
 {int}                     {return ops.unidadTipoEnt();}
-{longLongInt}             {return ops.unidadTipoHugeHuge();}
 {longInt}                 {return ops.unidadTipoHuge();}
 {bool}                    {return ops.unidadTipoBool();}
 {real}                    {return ops.unidadTipoReal();}
