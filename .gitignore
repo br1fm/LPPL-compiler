@@ -4,5 +4,6 @@
 
 ./Proyecto_final/input.txt
 
-*/ClaseLexica.java
-*/ConstructorAST.java
+
+./Proyecto_final/constructorAST/constructorast/ClaseLexica.java
+./Proyecto_final/constructorAST/constructorast/ConstructorAST.java
