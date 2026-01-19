@@ -2,8 +2,8 @@
 
 *.zip
 
-./Proyecto_final/input.txt
+Proyecto_final/input.txt
 
 
-./Proyecto_final/constructorAST/constructorast/ClaseLexica.java
-./Proyecto_final/constructorAST/constructorast/ConstructorAST.java
+Proyecto_final/constructorAST/constructorast/ClaseLexica.java
+Proyecto_final/constructorAST/constructorast/ConstructorAST.java
