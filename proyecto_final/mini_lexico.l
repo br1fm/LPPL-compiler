@@ -62,7 +62,6 @@ int = ent
 bool = bool
 real = real
 longInt = huge
-longLongInt = hugeHuge
 puntocoma = \;
 while = while
 whileif = whif
