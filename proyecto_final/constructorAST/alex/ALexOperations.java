@@ -104,6 +104,9 @@ public class ALexOperations {
  public UnidadLexica unidadBucleWhile() {
       return new UnidadLexica(alex.fila(), alex.columna(),ClaseLexica.BUCLE_WHILE);
  }
+ public UnidadLexica unidadWhileIf() {
+      return new UnidadLexica(alex.fila(), alex.columna(),ClaseLexica.WHILEIF);
+ }
 
 
 
