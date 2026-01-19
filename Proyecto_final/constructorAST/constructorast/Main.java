@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import alex.AnalizadorLexicoTiny;
 import ast.Declaracion;
+import ast.DeclaracionArray;
 import ast.Instruccion;
 import ast.TableStack;
 import java.util.LinkedList;
@@ -63,7 +64,10 @@ public class Main {
 		Set<Map.Entry<String, Declaracion>> variables_vivas = infoBinding.peek().getTable();
 		for (Map.Entry<String, Declaracion> entry : variables_vivas) {
 			Declaracion nodo = entry.getValue();
-			System.out.println("Variable  " + entry.getKey() + " -> " + nodo.getValue());
+			if(nodo instanceof DeclaracionArray)
+				System.out.println("Variable  " + entry.getKey() + " -> " + ((DeclaracionArray) nodo).getValues());
+			else
+				System.out.println("Variable  " + entry.getKey() + " -> " + nodo.getValue());
 		}
 	}
 }

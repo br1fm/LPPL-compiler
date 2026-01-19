@@ -7,5 +7,7 @@ public enum TipoError {
     TYPECOND,
     TYPEASIG,
     NOVALUE,
-    TOOBIG    
+    TOOBIG,
+    OUTOFBOUNDS,
+    NOTARRAY  
 }

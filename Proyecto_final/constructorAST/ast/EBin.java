@@ -176,7 +176,7 @@ public class EBin extends E {
   }
 
   boolean esTipoNumerico(Type tipo) {
-    return tipo == Type.NUM || tipo == Type.REAL || tipo == Type.HUGE || tipo == Type.HUGEHUGE;
+    return tipo == Type.NUM || tipo == Type.REAL || tipo == Type.HUGE;
   }
 
   public Number execute() {

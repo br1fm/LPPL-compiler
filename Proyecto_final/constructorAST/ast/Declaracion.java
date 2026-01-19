@@ -4,10 +4,10 @@ import errors.TipoError;
 import java.util.LinkedList;
 
 public class Declaracion extends Instruccion {
-  private String name;
-  private Type type;
-  private boolean usado;
-  private Number value;
+  protected String name;
+  protected Type type;
+  protected boolean usado;
+  protected Number value;
   
   public Declaracion(Type type, String name) {
    this.type = type;

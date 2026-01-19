@@ -58,6 +58,8 @@ Inst    ::= BucleCond: inst
 
 Asig    ::= IDEN: id IGUAL E0: exp PUNTOCOMA
             {: RESULT = new Asignacion(id.lexema, exp); :};
+Asig    ::= IDEN: id CAP ENT:idx CCIERRE IGUAL E0: exp PUNTOCOMA
+            {: RESULT = new AsignacionArray(id.lexema, idx.lexema, exp); :};
             
 Decl    ::= TIPO_ENT IDEN: id PUNTOCOMA
             {: RESULT = new Declaracion(Type.NUM, id.lexema); :};
@@ -135,6 +137,8 @@ E4      ::= TRUE
             {: RESULT = new BoolValue("true"); :};
 E4      ::= FALSE 
             {: RESULT = new BoolValue("false"); :};
+E4      ::= IDEN:id CAP ENT:idx CCIERRE
+            {: RESULT = new IdentificadorArray(id.lexema, idx.lexema); :};
 E4      ::= IDEN: id
             {: RESULT = new Identificador(id.lexema); :}; 
 E4      ::= PAP E0: exp PCIERRE
