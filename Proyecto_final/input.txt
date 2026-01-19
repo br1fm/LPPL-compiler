@@ -5,7 +5,7 @@ ent y;
 bool b;
 huge h;
 
-h = 7e23124123123214;
+h = 7e2;
 x = 31;
 y = 2;
 huge g;

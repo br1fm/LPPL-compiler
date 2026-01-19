@@ -2,4 +2,7 @@
 
 *.zip
 
-input.txt
+./Proyecto_final/input.txt
+
+*/ClaseLexica.java
+*/ConstructorAST.java
