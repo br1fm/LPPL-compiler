@@ -1,0 +1,30 @@
+# Valido: ent vs ent #
+#ent a;
+ent b;
+a = 1;
+b = 2;
+si (a < b) [
+  a = a + 1;
+] sino [
+  a = a - 1;
+] #
+
+# comparando bool con ent #
+# bool p;
+ent q;
+p = verdadero;
+q = 1;
+si (p < q) [
+  q = q + 1;
+]sino [
+  q = 3;
+] #
+
+# identificador no declarado en la condicion #
+#ent r;
+si (x < 10) [
+  r = 1;
+]sino [
+  r = 3;
+] #
+

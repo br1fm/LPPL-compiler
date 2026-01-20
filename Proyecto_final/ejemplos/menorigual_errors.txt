@@ -1,0 +1,29 @@
+# Valido huge vs ent #
+huge h;
+ent m;
+h = 3e2;
+m = 10;
+si (h <= m)[
+  m = m + 1;
+]sino [
+  m = 3;
+]
+
+# bool con real #
+bool f;
+real t;
+f = verdadero;
+t = 2.0;
+si (f <= t)[
+  t = t + 1.0;
+]sino [
+  t = 3;
+]
+
+# error no existe identificador para u #
+#ent v;
+si (u <= 5)[
+  v = 1;
+]sino [
+  v = 3;
+]#

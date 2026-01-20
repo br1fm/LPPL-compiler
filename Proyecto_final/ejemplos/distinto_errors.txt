@@ -1,0 +1,20 @@
+# Válido: ent != ent -> bool #
+ent a;
+ent b;
+a = 1;
+b = 2;
+bool bres;
+bres = falso;
+bres = a != b;
+
+# ent != real (tipos distintos) #
+# ent ai;
+real rr;
+ai = 3;
+rr = 3.0;
+bool br;
+br = ai != rr; #
+
+# identificador no declarado en la expresión #
+# bool out;
+out = x != 1; #
