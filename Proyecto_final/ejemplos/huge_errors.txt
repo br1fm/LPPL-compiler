@@ -1,0 +1,20 @@
+# Prueba 0: tipo válido y leído #
+huge h0;
+h0 = 3e4;
+huge h4;
+h4 = 3e8;
+h0 = h4;
+h4 = h0;
+
+# Prueba 1: tipo no valido #
+ent h1;
+h1 = 3e2;
+
+# Prueba 2: base demasiado grande TOOBIG #
+huge h2;
+h2 = 12345678901e2;  
+
+# Prueba 3: exponente demasiado grande -> TOOBIG #
+huge h3;
+h3 = 2e12345678901;
+

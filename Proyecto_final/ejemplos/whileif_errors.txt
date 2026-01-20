@@ -1,0 +1,27 @@
+# condBucle no booleano (ent por ej) #
+ent i;
+i = 0;
+whif (i ; verdadero) [
+  i = i + 1;
+] sino [
+  i = i + 2;
+]
+
+# condIf no booleano #
+ent j;
+j = 0;
+whif (verdadero ; j) [
+  j = j + 1;
+] sino [
+  j = j + 2;
+] 
+
+
+# identificador no declarado en alguna condicion #
+# whif (x ; y) [
+  ent a;
+  a = 1;
+] sino [
+  ent b;
+  b = 2;
+] #

@@ -1,0 +1,19 @@
+# uso de real como condicion #
+real r;
+r = 3.14;
+si (r) [
+  r = r + 1.0;
+] sino [
+  r = r - 1.0;
+] 
+
+# real asginado mal #
+real x;
+x = 1;
+ent y;
+y = x;
+
+# Este de aqui hace que el resto no se muestren independientemente de donde lo coloques en codigo #
+# otro ejemplo de malformacion 
+real bad;
+bad = 1.2.3; #

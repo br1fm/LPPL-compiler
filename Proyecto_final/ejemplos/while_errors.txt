@@ -1,0 +1,28 @@
+# condicion no booleana #
+ent x;
+x = 1;
+while (x) [
+  x = x + 1;
+] 
+
+# condicion real en while #
+real r;
+r = 1.2;
+while (r) [
+  r = r + 1.0;
+]
+
+# Este de aqui hace que el resto no se muestren independientemente de donde lo coloques en codigo #
+# identificador no definido en condicion
+while (z) [
+  ent a;
+  a = 1;
+] #
+
+# porcion de codigo sin errores #
+ent t;
+t = 3;
+while (t > 0) [
+  t = t - 1;
+]
+

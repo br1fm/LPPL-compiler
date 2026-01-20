@@ -1,0 +1,16 @@
+# Prueba capa invisibilidad de variables leidas y no leidas #
+ent a;
+bool b;
+real c;
+huge h;
+a = 1;
+
+# uso correcto para e #
+ent d;
+ent e;
+e = 3;
+si (a == 1)[
+  d = e;      
+]sino [
+  d = 0;
+]

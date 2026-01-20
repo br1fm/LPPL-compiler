@@ -1,0 +1,29 @@
+# Valido real vs ent #
+real r;
+ent n;
+r = 1.5;
+n = 1;
+si (r >= n) [
+  n = n + 1;
+]sino [
+  n = 3;
+]
+
+# ERROR TYPEOP bool con ent #
+bool b;
+ent e;
+b = falso;
+e = 2;
+si (b >= e) [
+  e = e + 1;
+]sino [
+  e = 4;
+]
+
+# ERROR NOIDEN identificadores no declarados #
+ent s;
+si (y >= z) [
+  s = 0;
+]sino [
+  s = 3;
+]
